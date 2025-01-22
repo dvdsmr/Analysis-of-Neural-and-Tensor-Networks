@@ -10,6 +10,15 @@ from colorama import Fore, Style
 
 import time
 
+
+def left_unfolding(order3tensor):
+    s = order3tensor.shape
+    return order3tensor.reshape(s[0]*s[1], s[2])
+
+def right_unfolding(order3tensor):
+    s = order3tensor.shape
+    return order3tensor.reshape(s[0], s[1]*s[2])
+
 class TensorTrain:
     def __init__(self, dims, comp_list = None):
         
